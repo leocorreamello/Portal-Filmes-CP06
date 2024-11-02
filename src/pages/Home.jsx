@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import CardContainer from "../components/CardContainer";
 import MovieCard from "../components/MovieCard";
+import './Home.css'; // Import the CSS file
 
 export default function Home() {
 
@@ -39,15 +40,37 @@ export default function Home() {
 
     return (
         <>
-            <CardContainer titulo="Populares">
-                {
-                    filmesPopulares
-                        .map(filme => (
-                            <MovieCard key={filme.id} {...filme} />
-                        ))
-                }
-            </CardContainer>
-
+            <div className="carousel-wrapper">
+                <div className="space-y-4"> {/* Adicione esta div com spacing vertical */}
+                    <CardContainer titulo="Populares" className="flex flex-col items-center justify-center p-5 gap-8">
+                        {
+                            filmesTrending
+                                .slice(0, 5)
+                                .map(filme => (
+                                    <MovieCard key={filme.id} {...filme} style={{ width: '200px', height: '300px' }} />
+                                ))
+                        }
+                    </CardContainer>
+                    <CardContainer titulo="Series de TV" className="flex flex-col items-center justify-center p-5 gap-8">
+                        {
+                            filmesPopulares
+                                .slice(0, 5)
+                                .map(filme => (
+                                    <MovieCard key={filme.id} {...filme} style={{ width: '200px', height: '300px' }} />
+                                ))
+                        }
+                    </CardContainer>
+                    <CardContainer titulo="Em breve" className="flex flex-col items-center justify-center p-5 gap-8">
+                        {
+                            filmesUpcoming
+                                .slice(0, 5)
+                                .map(filme => (
+                                    <MovieCard key={filme.id} {...filme} style={{ width: '200px', height: '300px' }} />
+                                ))
+                        }
+                    </CardContainer>
+                </div>
+            </div>
         </>
     )
 }

@@ -6,7 +6,7 @@ export default function Login({ isLogged, handleLogin }) {
             {isLogged && <p>Olá, usuário</p>}
             <button
                 onClick={handleLogin}
-                className={`${isLogged ? "bg-white" : "bg-yellow-700"} text-purple-800 px-4 py-1 rounded`}>
+                className={`${isLogged ? "bg-white" : "bg-zinc-900"} text-white px-4 py-1 rounded`}>
                 {isLogged ? "Logout" : "Login"}
             </button>
         </div>

@@ -12,7 +12,7 @@ export default function Header() {
 
     return (
         <>
-            <header className="bg-purple-800 flex text-white justify-around h-14 items-center">
+            <header className="bg-slate-500 flex text-white justify-around h-14 items-center fixed">
                 <div>
                     <h1 className="font-bold">Portal Filmes</h1>
                 </div>

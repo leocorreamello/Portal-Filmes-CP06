@@ -44,7 +44,7 @@ export default function Contato() {
                     onChange={e => setMensagem(e.target.value)}
                 >
                 </textarea>
-                <button type="submit" className="bg-purple-900 mt-5 text-white p-2 rounded-md">Enviar</button>
+                <button type="submit" className="bg-zinc-900 mt-5 text-white p-2 rounded-md">Enviar</button>
             </form>
         </div>
     )
