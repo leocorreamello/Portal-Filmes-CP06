@@ -8,7 +8,8 @@
 
 .movie-card {
   transition: transform 0.3s ease;
-  width: 200px; /* Set a fixed width for movie cards */
+  width: 100%; /* Use 100% width for responsiveness */
+  max-width: 200px; /* Set a max width for movie cards */
   margin: 0 auto; /* Center the movie cards */
   overflow: hidden; /* Prevent vertical scrollbar */
   position: relative; /* Ensure absolute positioning of inner elements */
@@ -27,7 +28,7 @@
   right: 0;
   background: rgba(0, 0, 0, 0.75); /* Semi-transparent background */
   color: white;
-  padding: 10px;
+  padding: 0.625rem; /* Use rem units for padding */
   text-align: center;
   overflow: hidden; /* Prevent overflow of text */
 }
@@ -43,11 +44,13 @@ input[type="text"]::placeholder {
 
 /* Additional styles for the contact page */
 h1, h2 {
-  color: #edf2f7; /* Tailwind's gray-800 */
+  color: #1f2937; /* Tailwind's gray-800 */
+  font-size: 1.5rem; /* Use rem units for font size */
 }
 
 p {
-  color: #edf2f7; /* Tailwind's gray-600 */
+  color: #4b5563; /* Tailwind's gray-600 */
+  font-size: 1rem; /* Use rem units for font size */
 }
 
 a {
@@ -61,43 +64,43 @@ a:hover {
 
 /* Styles for login and register forms */
 form {
-  max-width: 400px;
+  max-width: 25rem; /* Use rem units for max width */
   width: 100%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 1.25rem; /* Use rem units for padding */
   background: #2d3748; /* Tailwind's gray-700 */
-  border-radius: 8px;
+  border-radius: 0.5rem; /* Use rem units for border radius */
 }
 
 form h2 {
-  margin-bottom: 20px;
-  font-size: 24px;
+  margin-bottom: 1.25rem; /* Use rem units for margin */
+  font-size: 1.5rem; /* Use rem units for font size */
   color: #edf2f7; /* Tailwind's gray-100 */
 }
 
 form label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem; /* Use rem units for margin */
   color: #a0aec0; /* Tailwind's gray-400 */
 }
 
 form input {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
+  padding: 0.625rem; /* Use rem units for padding */
+  margin-bottom: 1.25rem; /* Use rem units for margin */
   border: 1px solid #4a5568; /* Tailwind's gray-600 */
-  border-radius: 4px;
+  border-radius: 0.25rem; /* Use rem units for border radius */
   background: #1a202c; /* Tailwind's gray-900 */
   color: #edf2f7; /* Tailwind's gray-100 */
 }
 
 form button {
   width: 100%;
-  padding: 10px;
+  padding: 0.625rem; /* Use rem units for padding */
   background: #3182ce; /* Tailwind's blue-600 */
   color: #edf2f7; /* Tailwind's gray-100 */
   border: none;
-  border-radius: 4px;
+  border-radius: 0.25rem; /* Use rem units for border radius */
   cursor: pointer;
 }
 
@@ -107,5 +110,68 @@ form button:hover {
 
 form .error {
   color: #e53e3e; /* Tailwind's red-600 */
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem; /* Use rem units for margin */
+}
+
+/* Dark mode styles */
+body.dark {
+  background-color: #1a202c; /* Tailwind's gray-900 */
+  color: #edf2f7; /* Tailwind's gray-100 */
+}
+
+body.dark h1, body.dark h2 {
+  color: #edf2f7; /* Tailwind's gray-100 */
+}
+
+body.dark p {
+  color: #a0aec0; /* Tailwind's gray-400 */
+}
+
+body.dark a:hover {
+  color: #63b3ed; /* Tailwind's blue-400 */
+}
+
+/* Light mode styles */
+body {
+  background-color: #ffffff; /* White background */
+  color: #1a202c; /* Tailwind's gray-900 */
+}
+
+body h1, body h2 {
+  color: #1a202c; /* Tailwind's gray-900 */
+}
+
+body p {
+  color: #2d3748; /* Tailwind's gray-700 */
+}
+
+body a:hover {
+  color: #3182ce; /* Tailwind's blue-600 */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  h1, h2 {
+    font-size: 1.25rem; /* Adjust font size for smaller screens */
+  }
+
+  p {
+    font-size: 0.875rem; /* Adjust font size for smaller screens */
+  }
+
+  .movie-card {
+    max-width: 150px; /* Adjust max width for smaller screens */
+  }
+
+  form {
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
+
+  form h2 {
+    font-size: 1.25rem; /* Adjust font size for smaller screens */
+  }
+
+  form input, form button {
+    padding: 0.5rem; /* Adjust padding for smaller screens */
+  }
 }

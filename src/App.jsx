@@ -11,6 +11,12 @@ function App() {
         if (!user && location.pathname !== '/register' && location.pathname !== '/login') {
             navigate('/login');
         }
+
+        // Apply theme based on user preference
+        const theme = localStorage.getItem('theme');
+        if (theme) {
+            document.body.classList.toggle('dark', theme === 'dark');
+        }
     }, [navigate, location]);
 
     return (

@@ -28,3 +28,20 @@ header {
     width: 100%;
     z-index: 1000; /* Garante que o header fique acima de outros elementos */
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .centered-container {
+        padding: 1rem; /* Adjust padding for smaller screens */
+        margin-top: 3rem; /* Adjust margin for smaller screens */
+    }
+
+    .carousel-item-padding-40-px {
+        padding: 0 1.5rem; /* Adjust padding for smaller screens */
+    }
+
+    .carousel-wrapper {
+        margin-top: 4rem; /* Adjust margin for smaller screens */
+        padding-top: 1rem; /* Adjust padding for smaller screens */
+    }
+}
