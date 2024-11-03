@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import MovieCard from "../components/MovieCard"
+import { FaSearch } from "react-icons/fa"
 
 export default function MovieListPage() {
-
     const [search, setSearch] = useState("")
     const [filmes, setFilmes] = useState([])
     const [isLoading, setIsLoading] = useState(false)
@@ -25,26 +25,26 @@ export default function MovieListPage() {
 
     return (
         <>
-            <h2>Veja o catálogo completo de filmes</h2>
-            <input
-                className="text-black"
-                type="text"
-                id="search"
-                value={search}
-                onChange={handleSearch}
-            />
-            <section className="flex flex-wrap justify-between gap-4">
+            <h2 className="mt-20 text-center text-3xl font-bold">Veja o catálogo completo de filmes</h2>
+            <div className="relative w-full max-w-md mx-auto mt-4">
+                <input
+                    className="w-full p-3 pl-10 text-black rounded-full bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    type="text"
+                    id="search"
+                    value={search}
+                    onChange={handleSearch}
+                    placeholder="Buscar filmes..."
+                />
+                <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+            </div>
+            <section className="flex flex-wrap justify-between gap-4 mt-4">
                 {
-                    isLoading ? <p>Carregando...</p> :
-
+                    isLoading ? <p className="text-center w-full">Carregando...</p> :
                         filmesFiltrados.length > 0 ?
-
-                            filmesFiltrados
-                                .map(filme => (
-                                    <MovieCard key={filme.id} {...filme} />
-                                ))
-                            :
-                            <p> Filme não encontrado</p>
+                            filmesFiltrados.map(filme => (
+                                <MovieCard key={filme.id} {...filme} />
+                            )) :
+                            <p className="text-center w-full">Filme não encontrado</p>
                 }
             </section>
         </>

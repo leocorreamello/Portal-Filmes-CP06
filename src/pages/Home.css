@@ -5,6 +5,7 @@
     justify-content: center;
     min-height: 100vh; /* Garante que o contêiner ocupe toda a altura da tela */
     padding: 20px; /* Adiciona espaçamento interno, se necessário */
+    margin-top: 56px; /* Add margin to prevent overlap with the header */
 }
 
 .carousel-item-padding-40-px {
@@ -16,7 +17,7 @@
     align-items: center;
     justify-content: center;
     min-height: calc(100vh - 56px); /* Ajusta a altura para considerar o header */
-    margin-top: 56px; /* Espaçamento entre o header e o carrossel */
+    margin-top: 76px; /* Adjust margin to prevent overlap with the header */
     padding-top: 20px; /* Adiciona espaçamento interno no topo */
 }
 

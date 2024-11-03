@@ -2,6 +2,110 @@
 @tailwind components;
 @tailwind utilities;
 
-.active{
+.active {
   border-bottom: 2px solid white;
+}
+
+.movie-card {
+  transition: transform 0.3s ease;
+  width: 200px; /* Set a fixed width for movie cards */
+  margin: 0 auto; /* Center the movie cards */
+  overflow: hidden; /* Prevent vertical scrollbar */
+  position: relative; /* Ensure absolute positioning of inner elements */
+}
+
+.movie-card img {
+  display: block; /* Ensure the image is displayed as a block element */
+  width: 100%; /* Ensure the image takes the full width of the container */
+  height: auto; /* Maintain the aspect ratio */
+}
+
+.movie-card .movie-info {
+  position: absolute; /* Position the info absolutely within the card */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.75); /* Semi-transparent background */
+  color: white;
+  padding: 10px;
+  text-align: center;
+  overflow: hidden; /* Prevent overflow of text */
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+/* Additional styles for the search bar */
+input[type="text"]::placeholder {
+  color: #9ca3af; /* Tailwind's gray-400 */
+}
+
+/* Additional styles for the contact page */
+h1, h2 {
+  color: #edf2f7; /* Tailwind's gray-800 */
+}
+
+p {
+  color: #edf2f7; /* Tailwind's gray-600 */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #2563eb; /* Tailwind's blue-600 */
+}
+
+/* Styles for login and register forms */
+form {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background: #2d3748; /* Tailwind's gray-700 */
+  border-radius: 8px;
+}
+
+form h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #edf2f7; /* Tailwind's gray-100 */
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #a0aec0; /* Tailwind's gray-400 */
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #4a5568; /* Tailwind's gray-600 */
+  border-radius: 4px;
+  background: #1a202c; /* Tailwind's gray-900 */
+  color: #edf2f7; /* Tailwind's gray-100 */
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background: #3182ce; /* Tailwind's blue-600 */
+  color: #edf2f7; /* Tailwind's gray-100 */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #2b6cb0; /* Tailwind's blue-700 */
+}
+
+form .error {
+  color: #e53e3e; /* Tailwind's red-600 */
+  margin-bottom: 20px;
 }

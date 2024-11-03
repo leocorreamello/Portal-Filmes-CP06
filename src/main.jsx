@@ -1,15 +1,19 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import App from './App.jsx'
-import './index.css'
-import Contato from './pages/Contato.jsx'
-import GenreList from './pages/GenreListPage.jsx'
-import Home from './pages/Home.jsx'
-import MovieDetailPage from './pages/MovieDetailPage.jsx'
-import MovieListPage from './pages/MovieListPage.jsx'
-import MoviesByGenrePage from './pages/MoviesByGenrePage.jsx'
-import PageNotFound from './pages/PageNotFound.jsx'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import App from './App.jsx';
+import './index.css';
+import Contato from './pages/Contato.jsx';
+import GenreList from './pages/GenreListPage.jsx';
+import Home from './pages/Home.jsx';
+import MovieDetailPage from './pages/MovieDetailPage.jsx';
+import MovieListPage from './pages/MovieListPage.jsx';
+import MoviesByGenrePage from './pages/MoviesByGenrePage.jsx';
+import PageNotFound from './pages/PageNotFound.jsx';
+import WatchedMoviesPage from './pages/WatchedMoviesPage.jsx';
+import WatchLaterMoviesPage from './pages/WatchLaterMoviesPage.jsx';
+import Login from './pages/Login.jsx';
+import Register from './pages/Register.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,16 +23,21 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: '/movies', element: <MovieListPage /> },
       { path: '/movies/:id', element: <MovieDetailPage /> },
-      { path: '/genre', element: <GenreList /> },
-      { path: '/genre/:id', element: <MoviesByGenrePage /> },
+      { path: '/genre', element: <GenreList />, children: [
+        { path: ':id', element: <MoviesByGenrePage /> }
+      ] },
       { path: '/contato', element: <Contato /> },
+      { path: '/filmes-assistidos', element: <WatchedMoviesPage /> },
+      { path: '/filmes-para-ver-depois', element: <WatchLaterMoviesPage /> },
       { path: '*', element: <PageNotFound /> }
     ]
+  },
+  { path: '/login', element: <Login /> },
+  { path: '/register', element: <Register /> }
+]);
 
-  }
-])
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>,
-)
+  </StrictMode>
+);

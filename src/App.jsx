@@ -1,14 +1,24 @@
-import { Outlet } from "react-router-dom"
-import Header from "./components/Header"
+import { Outlet, useNavigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import Header from "./components/Header";
 
 function App() {
+    const navigate = useNavigate();
+    const location = useLocation();
 
-  return (
-    <>
-      <Header />
-      <Outlet />
-    </>
-  )
+    useEffect(() => {
+        const user = localStorage.getItem('user');
+        if (!user && location.pathname !== '/register' && location.pathname !== '/login') {
+            navigate('/login');
+        }
+    }, [navigate, location]);
+
+    return (
+        <>
+            <Header />
+            <Outlet />
+        </>
+    );
 }
 
-export default App
+export default App;
